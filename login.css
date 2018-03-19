@@ -71,16 +71,77 @@ body {
 	margin: 0px;
 }
 
-.boxed h4 {
-	border: 2px solid #F1EADC;
-	border-radius: 25px;
-	padding: 0px;
-}
-
 .boxed {
 	border: 2px solid #F1EADC;
+	padding: 10px 40px;
+}
+
+
+.boxed h3 {
+	padding-bottom: 20px;
+	margin: 0;
 	text-align: center;
-	padding: 10px;
+	font-size: 30px;
+}
+
+.boxed form {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.boxed h4 {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #F1EADC;
+}
+
+.boxed input {
+	margin-bottom: 20px;
+	background-color: #1493A5;
+	color: #F1EADC;
+	width: 100%;
+}
+
+.boxed input[type="text"],
+.boxed input[type="Password"]
+{
+	border: none;
+	border-bottom: 2px solid #F1EADC;
+	outline: none;
+	height: 30px;
+}
+
+.boxed input[type="text"]:focus,
+.boxed input[type="Password"]:focus
+{
+	border-bottom: 2px solid black;
+
+}
+
+::placeholder {
+	color: #F1EADC;
+	opacity: 1;
+}
+
+.boxed input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: black;
+	background-color: #F1EADC;
+	cursor: pointer;
+}
+
+.boxed input[type="submit"]:hover
+{
+	background-color: #1493A5;
+}
+
+.forg-pass {
+	font-size: 12px;
+	font-weight: bold;
 }
 
 a:link {
