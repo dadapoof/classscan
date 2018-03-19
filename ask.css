@@ -84,12 +84,25 @@ body {
 
 .boxed {
 	border: 2px solid #F1EADC;
-	text-align: center;
-	padding: 30px 70px;
+	padding: 100px 270px;
 }
 
-.boxed h4 {
-	padding: 15px;
+
+.boxed h3 {
+	padding: 0;
+	margin: 0;
+	font-size: 30px;
+}
+
+::placeholder {
+	color: #1493A5;
+	opacity: 1;
+}
+
+.boxed input {
+	width: 100%;
+	margin-bottom: 10px;
+	height: 20px;
 }
 
 a:link {
