@@ -24,24 +24,34 @@
 	</div>
 
 	<div class="page-content">
-
+		{% from "includes/_formhelpers.html" import render_field %}
 		<div class="boxed">
-			<form>
-				<h3>Name of School:</h3>
-				<input type="text" placeholder="Beverly Hills High School">
-				<h3>Address of School:</h3>
-				<input type="text" placeholder="1 Lombard Street San Fransisco, CA 94111">
-				<h3>School Phone Number:</h3>
-				<input type="tel" placeholder="000-000-0000">
-				<h3>Full Name:</h3>
-				<input type="text" placeholder="John Doe">
-				<h3>Email Address:</h3>
-				<input type="Email" placeholder="johndoe@gmail.com">
-				<h3>Username:</h3>
-				<input type="text" placeholder="jdoe">
-				<h3>Password:</h3>
-				<input type="Password" placeholder="••••••••">
-				<input type="submit">
+			<form method="POST">
+				<div>
+					{{render_field(form.school_name, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.school_address, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.school_phone, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.name, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.username, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.email, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.password, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.confirm, class_="form-control")}}
+				</div>
+				<p><input type="submit" value="Submit"></p>
 			</form>
 
 		</div>
