@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ClassScan</title>
+		<meta charset="UTF-8">
+	  	<meta name="description" content="HomePage ClassScan">
+	  	<meta name="keywords" content="ClassScan, Home">
+	  	<meta name="viewport" content="width=device-width" />
+
+	  	<link rel="stylesheet" href="../../static/styles/administrator.css">
+	  	<link href="https://fonts.googleapis.com/css?family=Maven+Pro|Mina|Oxygen|Raleway|Syncopate" rel="stylesheet">
+
+	</head>
+  
+	<body>
+
+	<div style="display: inline-flex; width: 100%;" class="header">
+
+		<div class="home">
+			<a href="index.html">Home</a>
+		</div>
+
+
+		<a style="margin-top: 31px" href="/logout">Logout</a>
+		<p style="margin-top: 50px; text-align: center">Welcome {{session.username}}!</p>
+
+	</div>
+
+
+
+	<div class="page-content">
+
+		<div class="side-bar">
+			<h2>Students:</h2>
+			<ul>
+				{% for student in students %}
+				<li><a href="administrators/{{student.name}}">{{student.name}}</a></li>
+				{% endfor %}
+				<li><a href="/add_student">Add a student</a></li>
+			</ul>
+
+		</div>
+
+		<div class="main">
+			<h1>Attendance Report:</h1>
+			<p>Name: {{students.name}}</p>
+			<p>Class: {{students.classroom}}</p>
+			<p>Number of Times Absent: {{students.absenses}}</p>
+			<p>Number of Times Late: {{students.lateness}}</p>
+
+			<h2><a href="remove_student/{{students.name}}">Remove Student From DataBase</a></h2>
+			<h2><a href="edit_attendance/{{students.name}}">Edit Attendance Report</a></h2>
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<p>&copy;</p>
+		<a href="about.html"><p>About</p></a>
+		<a href="help.html"><p>Help</p></a>
+	</div>
+
+	</body>
+
+
+</html>

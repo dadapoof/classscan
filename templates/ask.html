@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ClassScan</title>
+		<meta charset="UTF-8">
+	  	<meta name="description" content="HomePage ClassScan">
+	  	<meta name="keywords" content="ClassScan, Home">
+	  	<meta name="viewport" content="width=device-width" />
+
+	  	<link rel="stylesheet" href="{{ url_for('static', filename='styles/ask.css')}}">
+	  	<link href="https://fonts.googleapis.com/css?family=Maven+Pro|Mina|Oxygen|Raleway|Syncopate" rel="stylesheet">
+
+	</head>
+  
+	<body>
+
+	<div class="header">
+
+		<div class="home">
+			<a href="index.html">Home</a>
+		</div>
+
+
+	</div>
+
+	<div class="page-content">
+		{% from "includes/_formhelpers.html" import render_field %}
+		<div class="boxed">
+			<form method="POST">
+				<div>
+					{{render_field(form.school_name, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.school_address, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.school_phone, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.name, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.username, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.email, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.password, class_="form-control")}}
+				</div>
+				<div>
+					{{render_field(form.confirm, class_="form-control")}}
+				</div>
+				<p><input type="submit" value="Submit"></p>
+			</form>
+
+		</div>
+		
+
+	</div>
+
+	<div class="footer">
+		<p>&copy;</p>
+		<a href="about.html"><p>About</p></a>
+		<a href="help.html"><p>Help</p></a>
+	</div>
+
+	</body>
+
+
+</html>
