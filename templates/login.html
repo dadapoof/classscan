@@ -28,13 +28,13 @@
 		<div class="boxed">
 			<h1>ClassScan</h1>
 			<h3>Welcome Back</h3>
-			<form>
+			<form action="" method="POST">
 				<h4>Username</h4>
-				<input type="text" name="" placeholder="john123...">
+				<input type="text" name="username" placeholder="john123..." value={{request.form.username}}>
 				<h4>Password</h4>
-				<input type="Password" name="" placeholder="•••••••">
+				<input type="Password" name="password" placeholder="•••••••" value={{request.form.password}}>
 				<input type="submit" name="" value="Sign In">
-				<a class="forg-pass" href="administrator.html">Forgot password</a>
+				<a class="forg-pass" href="">Forgot password</a>
 			</form>
 		</div>
 		

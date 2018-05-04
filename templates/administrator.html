@@ -7,42 +7,49 @@
 	  	<meta name="keywords" content="ClassScan, Home">
 	  	<meta name="viewport" content="width=device-width" />
 
-	  	<link rel="stylesheet" href="{{ url_for('static', filename='styles/administrator.css')}}">
+	  	<link rel="stylesheet" href="../../static/styles/administrator.css">
 	  	<link href="https://fonts.googleapis.com/css?family=Maven+Pro|Mina|Oxygen|Raleway|Syncopate" rel="stylesheet">
 
 	</head>
   
 	<body>
 
-	<div class="header">
+	<div style="display: inline-flex; width: 100%;" class="header">
 
 		<div class="home">
 			<a href="index.html">Home</a>
 		</div>
 
 
+		<a style="margin-top: 31px" href="/logout">Logout</a>
+		<p style="margin-top: 50px; text-align: center">Welcome {{session.username}}!</p>
+
 	</div>
+
+
 
 	<div class="page-content">
 
 		<div class="side-bar">
 			<h2>Students:</h2>
 			<ul>
-				<li><a href="administrator/{{students.id}}">Student 1</a></li>
-				<li><a href="administrator/{{students.id}}">Student 2</a></li>
-				<li><a href="administrator/{{students.id}}">Student 3</a></li>
-				<li>Add a student</li>
+				{% for student in students %}
+				<li><a href="administrators/{{student.name}}">{{student.name}}</a></li>
+				{% endfor %}
+				<li><a href="/add_student">Add a student</a></li>
 			</ul>
+
 		</div>
 
 		<div class="main">
 			<h1>Attendance Report:</h1>
-			<p>Name: </p>
-			<p>Number of Times Absent: </p>
-			<p>Number of Times Late: </p>
+			<p>Name: {{students.name}}</p>
+			<p>Class: {{students.classroom}}</p>
+			<p>Number of Times Absent: {{students.absenses}}</p>
+			<p>Number of Times Late: {{students.lateness}}</p>
 
-			<h2>Remove Student From DataBase</h2>
-			<h2>Edit Attendance Report</h2>
+			<h2><a href="remove_student/{{students.name}}">Remove Student From DataBase</a></h2>
+			<h2><a href="edit_attendance/{{students.name}}">Edit Attendance Report</a></h2>
 		</div>
 
 	</div>
